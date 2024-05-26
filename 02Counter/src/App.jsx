@@ -2,10 +2,19 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  let [count, setCount] = useState(0)
 
   const addValue = ()=>{
-    setCount(count+1)
+    setCount( (precount) => precount + 1 )
+    // setCount is a function and allow arrow function in said for set count vlaue
+    // first time arrow function run and again second time run new arrow 
+
+    setCount( (precount) => precount + 1 ) //again next time run for incres count fist time
+    setCount( (precount) => precount + 1 ) //again next time run for incres count second time
+
+    // bot setCount incres value only one time cause setCount take value one time 
+    // setCount(count+1)
+    // setCount(count+1)
   }
   
   const removeValue = ()=>{
