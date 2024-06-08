@@ -3,12 +3,10 @@ import './App.css'
 import Navbar from './component/navbar'
 import { counterContext } from './contextAPI/context'
 
-
-
-const nums = new Array(10_000_000).fill(0).map((_, i) => {
+const nums = new Array(20_000).fill(0).map((_, i) => {
   return {
     index: i,
-    isMagical: i === 9_000_000
+    isMagical: i === 19_000
   }
 })
 
@@ -39,10 +37,7 @@ function App() {
   useEffect(() => {
     console.log(`this is second use of useRef `)
     btnRef.current.style.backgroundColor = 'red'
-
   }, [])
-
-
 
   return (
     <>
@@ -60,14 +55,14 @@ function App() {
             <button onClick={() => {
               setCount((count) => count + 1), console.log("Add Value.."), setValue((value) => value + 1)
               if (count === 10) {
-                setNumbers(new Array(10_000_000).fill(0).map((_, i) => {
+                setNumbers(new Array(10_000).fill(0).map((_, i) => {
                   return {
                     index: i,
-                    isMagical: i === 9_000_000
+                    isMagical: i === 9_000
                   }
                 }));
               }
-            }} style={{ margin: 10, color: "black", backgroundColor: "white" }}  >
+            }} style={{ margin: 10, color: "black", backgroundColor: "white" }}>
               Add
             </button>
 
