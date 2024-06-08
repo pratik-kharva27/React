@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
+import Button from './button.jsx'
 
-const Navbar = ({ color }) => {
+
+const Navbar = ({ color,count1 }) => {  
 
   useEffect(() => {
     // console.log("1 color was change...")
@@ -31,7 +33,8 @@ const Navbar = ({ color }) => {
 
   return (
     <div>
-      code with sparrow {color} Both...
+      <Button count2={count1}/>
+      code with sparrow {color} Both...  using props
     </div>
   )
 }
